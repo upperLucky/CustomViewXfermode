@@ -27,9 +27,11 @@ class XfermodeView(context: Context?, attrs: AttributeSet?) : View(context, attr
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
+        // 开启离屏缓冲
         val count = canvas.saveLayer(rectF, null)
         // 画背景
         canvas.drawOval(rectF, paint)
+        // 设置Xfermode
         paint.xfermode = XFEROMODE
         canvas.drawBitmap(getAvator(AVATOR_WIDTH.toInt()), BITMAP_PADDING, BITMAP_PADDING, paint)
         paint.xfermode = null
